@@ -1,0 +1,23 @@
+.. This is your project NEWS file which will contain the release notes.
+.. Example: http://www.python.org/download/releases/2.6/NEWS.txt
+.. The content of this file, along with README.rst, will appear in your
+.. project's PyPI page.
+
+News
+====
+
+0.3 - not yet released
+----------------------
+
+* Added pi-yt entry point (Calum Eadie)
+
+
+0.2 - 29/10/2012
+----------------
+
+* Added command-line configuration of media player (Calum Eadie)
+
+0.1 - 29/02/2012
+----------------
+
+* Initial version

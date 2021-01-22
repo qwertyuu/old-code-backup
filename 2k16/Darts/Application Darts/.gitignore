@@ -1,0 +1,4 @@
+/nbproject/private/
+*.dll
+*.exe
+bin/Debug/Application Darts.vshost.exe

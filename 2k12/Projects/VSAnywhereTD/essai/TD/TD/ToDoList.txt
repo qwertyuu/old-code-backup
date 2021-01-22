@@ -1,0 +1,12 @@
+﻿Faire des ennemies
+Faire des tours
+Handle les keypress > parfait
+Handle les click > parfait
+créer une caméra - Fait!
+créer l'interface graphique (on se criss des textures on fera ca a la fin) 
+créer des maps -> Fait!
+ajouter un systeme de grille pour mettre les tours - Fait!
+faire un AI pour les tours et les creeps
+faire un systeme de waypoint pour les creep pour qu'ils trouvent leur chemin
+Créer une classe Circle
+Faire une fonction Intersects dans Circle
