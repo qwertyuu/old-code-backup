@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TESTPYTHON", "TESTPYTHON\TESTPYTHON.csproj", "{CFED8B24-A571-4AAD-B560-189D11120DDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFED8B24-A571-4AAD-B560-189D11120DDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFED8B24-A571-4AAD-B560-189D11120DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFED8B24-A571-4AAD-B560-189D11120DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFED8B24-A571-4AAD-B560-189D11120DDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

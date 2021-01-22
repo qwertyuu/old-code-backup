@@ -1,0 +1,119 @@
+﻿header
+{
+	color: white;
+	text-align: left;
+}
+#headertext
+{
+	font-family: "Comic sans MS", sans-serif;
+	font-size: 19pt;
+	margin-left: 10px;
+	margin-top: 1vh;
+	position: absolute;
+	text-shadow: 3px 3px 15px black;
+}
+body
+{
+	background-image: url(http://wallpoper.com/images/00/27/39/66/wood-texture_00273966.jpg);
+}
+img
+{
+	width: 98vw;
+}
+#liste
+{
+	text-align: left;
+}
+nav a
+{
+	border-spacing: 5px;
+	text-align: center;
+	width: 250px;
+}
+#description
+{
+	background-color: #F4EBDA;
+	border: 1px solid;
+	font-family: "Trebuchet MS", monospace;
+	text-align: center;
+}
+#navigation ul
+{
+	background: url(../images/bg.png) repeat-x top left;
+	border: 1px solid #000;
+	display: block;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	height: 33px;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: auto;
+}
+#navigation li
+{
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+#navigation li a
+{
+	color: #A79787;
+	float: left;
+	font-weight: normal;
+	height: 24px;
+	padding: 9px 15px 0;
+	text-decoration: none;
+}
+#navigation li a:hover,
+#navigation .actif
+{
+	background: url(../images/bg.png) repeat-x top left;
+	color: #fff;
+	text-decoration: none;
+}
+#navigation .actif a
+{
+	color: #fff;
+	font-weight: 700;
+}
+#navigation ul
+{
+	background-color: #B11718;
+}
+#navitation li a:hover,
+#navigation li.actif
+{
+	background-color: #DE3330;
+}
+footer
+{
+	font-family: trebuchet ,sans-serif;
+	position: bottom;
+}
+#background
+{
+	background-color: #F4EBDA;
+	border: 1px solid;
+	font-family: "Trebuchet MS", monospace;
+	height:400px;
+
+}
+#map{
+	float:right;
+	position:absolute;
+	right:70px;
+	top:250px;
+}
+#coordo{
+	padding-left:22px;
+}
+#plan{
+	float:right;
+	position:absolute;
+	top:600px;
+	right:220px;
+	
+}

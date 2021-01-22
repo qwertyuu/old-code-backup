@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="bdPreciDartModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="bdPreciDartModelStoreContainer">
+          <EntitySet Name="tblEquipe" EntityType="bdPreciDartModel.Store.tblEquipe" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblJoueur" EntityType="bdPreciDartModel.Store.tblJoueur" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblMatch" EntityType="bdPreciDartModel.Store.tblMatch" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblScore" EntityType="bdPreciDartModel.Store.tblScore" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Joueur_NoEquip" Association="bdPreciDartModel.Store.FK_Joueur_NoEquip">
+            <End Role="tblEquipe" EntitySet="tblEquipe" />
+            <End Role="tblJoueur" EntitySet="tblJoueur" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Match_J1" Association="bdPreciDartModel.Store.FK_Match_J1">
+            <End Role="tblJoueur" EntitySet="tblJoueur" />
+            <End Role="tblMatch" EntitySet="tblMatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Match_J2" Association="bdPreciDartModel.Store.FK_Match_J2">
+            <End Role="tblJoueur" EntitySet="tblJoueur" />
+            <End Role="tblMatch" EntitySet="tblMatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Score_IDMatch" Association="bdPreciDartModel.Store.FK_Score_IDMatch">
+            <End Role="tblMatch" EntitySet="tblMatch" />
+            <End Role="tblScore" EntitySet="tblScore" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Score_NoJoueur" Association="bdPreciDartModel.Store.FK_Score_NoJoueur">
+            <End Role="tblJoueur" EntitySet="tblJoueur" />
+            <End Role="tblScore" EntitySet="tblScore" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblEquipe">
+          <Key>
+            <PropertyRef Name="IdEquipe" />
+          </Key>
+          <Property Name="IdEquipe" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NomEquipe" Type="varchar" Nullable="false" MaxLength="35" />
+        </EntityType>
+        <EntityType Name="tblJoueur">
+          <Key>
+            <PropertyRef Name="NoJoueur" />
+          </Key>
+          <Property Name="NoJoueur" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NomJoueur" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="NoEquipe" Type="int" />
+        </EntityType>
+        <EntityType Name="tblMatch">
+          <Key>
+            <PropertyRef Name="IdMatch" />
+          </Key>
+          <Property Name="IdMatch" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NoJoueur1" Type="smallint" Nullable="false" />
+          <Property Name="NoJoueur2" Type="smallint" Nullable="false" />
+          <Property Name="DateMatch" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblScore">
+          <Key>
+            <PropertyRef Name="IdScore" />
+          </Key>
+          <Property Name="IdScore" Type="int" Nullable="false" />
+          <Property Name="Tour" Type="tinyint" Nullable="false" />
+          <Property Name="Score" Type="smallint" Nullable="false" />
+          <Property Name="IdMatch" Type="int" Nullable="false" />
+          <Property Name="IdJoueur" Type="smallint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Joueur_NoEquip">
+          <End Role="tblEquipe" Type="bdPreciDartModel.Store.tblEquipe" Multiplicity="0..1" />
+          <End Role="tblJoueur" Type="bdPreciDartModel.Store.tblJoueur" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEquipe">
+              <PropertyRef Name="IdEquipe" />
+            </Principal>
+            <Dependent Role="tblJoueur">
+              <PropertyRef Name="NoEquipe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Match_J1">
+          <End Role="tblJoueur" Type="bdPreciDartModel.Store.tblJoueur" Multiplicity="1" />
+          <End Role="tblMatch" Type="bdPreciDartModel.Store.tblMatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblJoueur">
+              <PropertyRef Name="NoJoueur" />
+            </Principal>
+            <Dependent Role="tblMatch">
+              <PropertyRef Name="NoJoueur1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Match_J2">
+          <End Role="tblJoueur" Type="bdPreciDartModel.Store.tblJoueur" Multiplicity="1" />
+          <End Role="tblMatch" Type="bdPreciDartModel.Store.tblMatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblJoueur">
+              <PropertyRef Name="NoJoueur" />
+            </Principal>
+            <Dependent Role="tblMatch">
+              <PropertyRef Name="NoJoueur2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Score_IDMatch">
+          <End Role="tblMatch" Type="bdPreciDartModel.Store.tblMatch" Multiplicity="1" />
+          <End Role="tblScore" Type="bdPreciDartModel.Store.tblScore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMatch">
+              <PropertyRef Name="IdMatch" />
+            </Principal>
+            <Dependent Role="tblScore">
+              <PropertyRef Name="IdMatch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Score_NoJoueur">
+          <End Role="tblJoueur" Type="bdPreciDartModel.Store.tblJoueur" Multiplicity="1" />
+          <End Role="tblScore" Type="bdPreciDartModel.Store.tblScore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblJoueur">
+              <PropertyRef Name="NoJoueur" />
+            </Principal>
+            <Dependent Role="tblScore">
+              <PropertyRef Name="IdJoueur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bdPreciDartModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="bdPreciDartEntities1" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tblEquipes" EntityType="bdPreciDartModel.tblEquipe" />
+          <EntitySet Name="tblJoueurs" EntityType="bdPreciDartModel.tblJoueur" />
+          <EntitySet Name="tblMatches" EntityType="bdPreciDartModel.tblMatch" />
+          <EntitySet Name="tblScores" EntityType="bdPreciDartModel.tblScore" />
+          <AssociationSet Name="FK_Joueur_NoEquip" Association="bdPreciDartModel.FK_Joueur_NoEquip">
+            <End Role="tblEquipe" EntitySet="tblEquipes" />
+            <End Role="tblJoueur" EntitySet="tblJoueurs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Match_J1" Association="bdPreciDartModel.FK_Match_J1">
+            <End Role="tblJoueur" EntitySet="tblJoueurs" />
+            <End Role="tblMatch" EntitySet="tblMatches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Match_J2" Association="bdPreciDartModel.FK_Match_J2">
+            <End Role="tblJoueur" EntitySet="tblJoueurs" />
+            <End Role="tblMatch" EntitySet="tblMatches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Score_NoJoueur" Association="bdPreciDartModel.FK_Score_NoJoueur">
+            <End Role="tblJoueur" EntitySet="tblJoueurs" />
+            <End Role="tblScore" EntitySet="tblScores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Score_IDMatch" Association="bdPreciDartModel.FK_Score_IDMatch">
+            <End Role="tblMatch" EntitySet="tblMatches" />
+            <End Role="tblScore" EntitySet="tblScores" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblEquipe">
+          <Key>
+            <PropertyRef Name="IdEquipe" />
+          </Key>
+          <Property Name="IdEquipe" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="NomEquipe" Type="String" Nullable="false" MaxLength="35" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tblJoueurs" Relationship="bdPreciDartModel.FK_Joueur_NoEquip" FromRole="tblEquipe" ToRole="tblJoueur" />
+        </EntityType>
+        <EntityType Name="tblJoueur">
+          <Key>
+            <PropertyRef Name="NoJoueur" />
+          </Key>
+          <Property Name="NoJoueur" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="NomJoueur" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="NoEquipe" Type="Int32" />
+          <NavigationProperty Name="tblEquipe" Relationship="bdPreciDartModel.FK_Joueur_NoEquip" FromRole="tblJoueur" ToRole="tblEquipe" />
+          <NavigationProperty Name="tblMatches1" Relationship="bdPreciDartModel.FK_Match_J1" FromRole="tblJoueur" ToRole="tblMatch" />
+          <NavigationProperty Name="tblMatches2" Relationship="bdPreciDartModel.FK_Match_J2" FromRole="tblJoueur" ToRole="tblMatch" />
+          <NavigationProperty Name="tblScores" Relationship="bdPreciDartModel.FK_Score_NoJoueur" FromRole="tblJoueur" ToRole="tblScore" />
+        </EntityType>
+        <EntityType Name="tblMatch">
+          <Key>
+            <PropertyRef Name="IdMatch" />
+          </Key>
+          <Property Name="IdMatch" Type="Int32" Nullable="false" />
+          <Property Name="NoJoueur1" Type="Int16" Nullable="false" />
+          <Property Name="NoJoueur2" Type="Int16" Nullable="false" />
+          <Property Name="DateMatch" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="tblJoueur1" Relationship="bdPreciDartModel.FK_Match_J1" FromRole="tblMatch" ToRole="tblJoueur" />
+          <NavigationProperty Name="tblJoueur2" Relationship="bdPreciDartModel.FK_Match_J2" FromRole="tblMatch" ToRole="tblJoueur" />
+          <NavigationProperty Name="tblScores" Relationship="bdPreciDartModel.FK_Score_IDMatch" FromRole="tblMatch" ToRole="tblScore" />
+        </EntityType>
+        <EntityType Name="tblScore">
+          <Key>
+            <PropertyRef Name="IdScore" />
+          </Key>
+          <Property Name="IdScore" Type="Int32" Nullable="false" />
+          <Property Name="Tour" Type="Byte" Nullable="false" />
+          <Property Name="Score" Type="Int16" Nullable="false" />
+          <Property Name="IdMatch" Type="Int32" Nullable="false" />
+          <Property Name="IdJoueur" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="tblJoueur" Relationship="bdPreciDartModel.FK_Score_NoJoueur" FromRole="tblScore" ToRole="tblJoueur" />
+          <NavigationProperty Name="tblMatch" Relationship="bdPreciDartModel.FK_Score_IDMatch" FromRole="tblScore" ToRole="tblMatch" />
+        </EntityType>
+        <Association Name="FK_Joueur_NoEquip">
+          <End Role="tblEquipe" Type="bdPreciDartModel.tblEquipe" Multiplicity="0..1" />
+          <End Role="tblJoueur" Type="bdPreciDartModel.tblJoueur" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEquipe">
+              <PropertyRef Name="IdEquipe" />
+            </Principal>
+            <Dependent Role="tblJoueur">
+              <PropertyRef Name="NoEquipe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Match_J1">
+          <End Role="tblJoueur" Type="bdPreciDartModel.tblJoueur" Multiplicity="1" />
+          <End Role="tblMatch" Type="bdPreciDartModel.tblMatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblJoueur">
+              <PropertyRef Name="NoJoueur" />
+            </Principal>
+            <Dependent Role="tblMatch">
+              <PropertyRef Name="NoJoueur1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Match_J2">
+          <End Role="tblJoueur" Type="bdPreciDartModel.tblJoueur" Multiplicity="1" />
+          <End Role="tblMatch" Type="bdPreciDartModel.tblMatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblJoueur">
+              <PropertyRef Name="NoJoueur" />
+            </Principal>
+            <Dependent Role="tblMatch">
+              <PropertyRef Name="NoJoueur2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Score_NoJoueur">
+          <End Role="tblJoueur" Type="bdPreciDartModel.tblJoueur" Multiplicity="1" />
+          <End Role="tblScore" Type="bdPreciDartModel.tblScore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblJoueur">
+              <PropertyRef Name="NoJoueur" />
+            </Principal>
+            <Dependent Role="tblScore">
+              <PropertyRef Name="IdJoueur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Score_IDMatch">
+          <End Role="tblMatch" Type="bdPreciDartModel.tblMatch" Multiplicity="1" />
+          <End Role="tblScore" Type="bdPreciDartModel.tblScore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMatch">
+              <PropertyRef Name="IdMatch" />
+            </Principal>
+            <Dependent Role="tblScore">
+              <PropertyRef Name="IdMatch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bdPreciDartModelStoreContainer" CdmEntityContainer="bdPreciDartEntities1">
+          <EntitySetMapping Name="tblEquipes">
+            <EntityTypeMapping TypeName="bdPreciDartModel.tblEquipe">
+              <MappingFragment StoreEntitySet="tblEquipe">
+                <ScalarProperty Name="IdEquipe" ColumnName="IdEquipe" />
+                <ScalarProperty Name="NomEquipe" ColumnName="NomEquipe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblJoueurs">
+            <EntityTypeMapping TypeName="bdPreciDartModel.tblJoueur">
+              <MappingFragment StoreEntitySet="tblJoueur">
+                <ScalarProperty Name="NoJoueur" ColumnName="NoJoueur" />
+                <ScalarProperty Name="NomJoueur" ColumnName="NomJoueur" />
+                <ScalarProperty Name="NoEquipe" ColumnName="NoEquipe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMatches">
+            <EntityTypeMapping TypeName="bdPreciDartModel.tblMatch">
+              <MappingFragment StoreEntitySet="tblMatch">
+                <ScalarProperty Name="IdMatch" ColumnName="IdMatch" />
+                <ScalarProperty Name="NoJoueur1" ColumnName="NoJoueur1" />
+                <ScalarProperty Name="NoJoueur2" ColumnName="NoJoueur2" />
+                <ScalarProperty Name="DateMatch" ColumnName="DateMatch" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblScores">
+            <EntityTypeMapping TypeName="bdPreciDartModel.tblScore">
+              <MappingFragment StoreEntitySet="tblScore">
+                <ScalarProperty Name="IdScore" ColumnName="IdScore" />
+                <ScalarProperty Name="Tour" ColumnName="Tour" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="IdMatch" ColumnName="IdMatch" />
+                <ScalarProperty Name="IdJoueur" ColumnName="IdJoueur" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

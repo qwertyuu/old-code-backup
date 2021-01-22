@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>f1776c1d-cb7d-43e8-b2dd-689a3c2ae8fb</ProjectGuid>
+    <ProjectHome>..\..\WebServ\</ProjectHome>
+    <StartupFile>Server.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <InterpreterId>9a7a9026-48c1-4688-9d5d-e5699d47d074</InterpreterId>
+    <InterpreterVersion>2.7</InterpreterVersion>
+    <Name>WebServV2</Name>
+    <RootNamespace>WebServV2</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Server.py" />
+    <Content Include="MIME.txt" />
+    <Content Include="public_html\index.html" />
+    <Content Include="public_html\404\404.html" />
+    <Content Include="public_html\autresites\contact.html" />
+    <Content Include="public_html\autresites\top10.html" />
+    <Content Include="public_html\css\style.css" />
+    <Content Include="public_html\images\bg.png" />
+    <Content Include="public_html\404\404.jpg" />
+    <Content Include="public_html\images\banderole.jpg" />
+    <Content Include="public_html\desktop.ini" />
+    <Content Include="public_html\index.gdoc" />
+    <Content Include="public_html\autresites\desktop.ini" />
+    <Content Include="public_html\css\desktop.ini" />
+    <Content Include="public_html\images\desktop.ini" />
+    <Content Include="public_html\musique\BadTouch.ogg" />
+    <Content Include="public_html\musique\Blue.ogg" />
+    <Content Include="public_html\musique\Careless.ogg" />
+    <Content Include="public_html\musique\desktop.ini" />
+    <Content Include="public_html\musique\Dota.ogg" />
+    <Content Include="public_html\musique\Fox.ogg" />
+    <Content Include="public_html\musique\GayBar.ogg" />
+    <Content Include="public_html\musique\Genitals.ogg" />
+    <Content Include="public_html\musique\Karma.ogg" />
+    <Content Include="public_html\musique\Rasputin.ogg" />
+    <Content Include="public_html\musique\RickRoll.ogg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="public_html" />
+    <Folder Include="public_html\404" />
+    <Folder Include="public_html\autresites" />
+    <Folder Include="public_html\css" />
+    <Folder Include="public_html\images" />
+    <Folder Include="public_html\musique" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+</Project>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ProfilingTarget xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectTarget>
+    <TargetProject>d44a3477-13b1-4db0-92ff-d5eda56b9bb4</TargetProject>
+    <FriendlyName>Pi Client Server</FriendlyName>
+  </ProjectTarget>
+</ProfilingTarget>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoE FR Installer", "AoE FR Installer\AoE FR Installer.csproj", "{89D1E09A-8BAC-4F6B-9F6C-DAE08A2A9647}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extractor", "Extractor\Extractor.csproj", "{022CC102-A007-4602-875B-2FD4ED511736}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89D1E09A-8BAC-4F6B-9F6C-DAE08A2A9647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89D1E09A-8BAC-4F6B-9F6C-DAE08A2A9647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89D1E09A-8BAC-4F6B-9F6C-DAE08A2A9647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89D1E09A-8BAC-4F6B-9F6C-DAE08A2A9647}.Release|Any CPU.Build.0 = Release|Any CPU
+		{022CC102-A007-4602-875B-2FD4ED511736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022CC102-A007-4602-875B-2FD4ED511736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022CC102-A007-4602-875B-2FD4ED511736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022CC102-A007-4602-875B-2FD4ED511736}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

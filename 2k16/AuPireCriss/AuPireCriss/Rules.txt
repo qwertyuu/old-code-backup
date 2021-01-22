@@ -1,0 +1,15 @@
+Creeps
+	Donne du gold seulement si le héros le last hit
+	Donne de l'xp
+Players
+	Gagne des lvl avec l'xp
+	Gagne du gold s'il last hit un minion
+	Range <= Range Tower
+Spells
+	Cooldowns
+	Pas de mana
+Base
+	Si détruite = Partie terminée
+Tower
+	Range = Largeur de la tower
+	Focus = Lui qui deal le plus de dmg

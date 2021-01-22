@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="92617ddcec3441899869854c6b2f5ac8" Name="Diagram1">
+        <EntityTypeShape EntityType="bdPreciDartModel.tblEquipe" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdPreciDartModel.tblJoueur" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdPreciDartModel.tblMatch" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdPreciDartModel.tblScore" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="bdPreciDartModel.FK_Joueur_NoEquip" ManuallyRouted="false" />
+        <AssociationConnector Association="bdPreciDartModel.FK_Match_J1" ManuallyRouted="false" />
+        <AssociationConnector Association="bdPreciDartModel.FK_Match_J2" ManuallyRouted="false" />
+        <AssociationConnector Association="bdPreciDartModel.FK_Score_NoJoueur" ManuallyRouted="false" />
+        <AssociationConnector Association="bdPreciDartModel.FK_Score_IDMatch" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,7 @@
+a = 'angela'
+try:
+    pre, post = a.split(' ')
+except ValueError as ve:
+    print 'erreur split.'
+    print a
+    print ve

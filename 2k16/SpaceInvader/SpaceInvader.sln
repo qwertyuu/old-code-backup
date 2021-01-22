@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceInvader", "SpaceInvader\SpaceInvader\SpaceInvader.csproj", "{9BE34F66-1B34-4AAB-9966-5A73105261F4}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "SpaceInvaderContent", "SpaceInvader\SpaceInvaderContent\SpaceInvaderContent.contentproj", "{5410CC98-407D-4E62-BE65-B2988DADA458}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BE34F66-1B34-4AAB-9966-5A73105261F4}.Debug|x86.ActiveCfg = Debug|x86
+		{9BE34F66-1B34-4AAB-9966-5A73105261F4}.Debug|x86.Build.0 = Debug|x86
+		{9BE34F66-1B34-4AAB-9966-5A73105261F4}.Release|x86.ActiveCfg = Release|x86
+		{9BE34F66-1B34-4AAB-9966-5A73105261F4}.Release|x86.Build.0 = Release|x86
+		{5410CC98-407D-4E62-BE65-B2988DADA458}.Debug|x86.ActiveCfg = Debug|x86
+		{5410CC98-407D-4E62-BE65-B2988DADA458}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

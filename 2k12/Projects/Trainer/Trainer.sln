@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgeOfWar", "Trainer\AgeOfWar.csproj", "{5053A520-84C5-43DE-8B80-6277D345F61D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElementalTD", "ElementalTD\ElementalTD.csproj", "{6AA60AFE-8C1F-442C-A085-7E77E5AE027C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5053A520-84C5-43DE-8B80-6277D345F61D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5053A520-84C5-43DE-8B80-6277D345F61D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5053A520-84C5-43DE-8B80-6277D345F61D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5053A520-84C5-43DE-8B80-6277D345F61D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AA60AFE-8C1F-442C-A085-7E77E5AE027C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AA60AFE-8C1F-442C-A085-7E77E5AE027C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AA60AFE-8C1F-442C-A085-7E77E5AE027C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AA60AFE-8C1F-442C-A085-7E77E5AE027C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
